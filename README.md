@@ -23,6 +23,7 @@
   - 컨트롤러, 샘플러, 쓰레드 그룹, ...
   - 구성 요소가 예측 가능한 방식으로 동작할 것을 보장함 (코드 기반인 다른 프레임워크의 경우 보장하기 어렵지만 유연성이 높음. 그만큼 학습이 필요하긴 함)
 - Plugin Manager, JMeterPlugins.org 를 통한 활발한 플러그인 지원
+- Swing으로 제작한 GUI와 CLI 지원
 - Apache 2.0 라이선스 사용
 
 ## Gatling
@@ -61,6 +62,38 @@
 - npm을 통해 설치가능
 - GUI가 없으며, 간단한 CLI가 존재
 
+툴에 대한 비교는 ... 여기까지 하고 직접 실행해보면서 경험해보자. (백날 비교해 봤자 와닿지 않음)
+
+# JMeter
+
+- 선정 기준
+  - 사용성 O
+  - 대중성 O
+  - 유연성 X (기본 기능들 부터 사용해보자)
+
+위 기준을 고려했을 때 JMeter가 그나마 사용성과 대중성이 좋은 것 같다. UI가 안이쁘다는 의견들이 있지만 한 번 경험해보자.
+
+## 설치
+
+https://jmeter.apache.org/download_jmeter.cgi
+
+zip 파일 설치
+
+zip 해제 후 해당 폴더 내 bin의 jmeter 실행하면 GUI 뜸 
+
+## 용어
+
+- Thread Group : 테스트에 사용될 쓰레드 개수, 쓰레드 1개당 사용자 1명
+- Sampler : 사용자의 액션 (예: 로그인, 게시물 작성, 게시물 조회 등)
+- Listener : 응답을 받아 리포팅, 검증, 그래프 등 다양한 처리
+- Configuration : Sampler 또는 Listener가 사용할 설정 값 (쿠키, JDBC 커넥션 등)
+- Assertion : 응답 확인 방법 (응답 코드, 본문 내용 비교 등)
+
+## 주의사항
+
+테스트 대상인 웹 어플리케이션과 테스트를 돌리는 서버가 서로 다른 곳에 있어야 정확한 테스트가 가능하다.(같은 서버내에서 테스트 시 자원을 같이 사용)  
+
 # 참고
 
 - [상위 부하 테스트 도구 (오픈 소스 목록)](https://loadfocus.com/ko-kr/load-testing-tools-open-source#beeswithmachineguns)
+- [[Spring] JMeter 사용법 - JMeter란?, 테스트 방법](https://effortguy.tistory.com/164)
